@@ -1,0 +1,28 @@
+{
+  "name": "autograde-js-jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testResultsProcessor": "jest-json-reporter"
+  },
+  "jestJsonReporter": {
+    "outputFile": "results/test.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baisettr/autograde-js-jest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baisettr/autograde-js-jest/issues"
+  },
+  "homepage": "https://github.com/baisettr/autograde-js-jest#readme",
+  "devDependencies": {
+    "jest-json-reporter": "^1.2.2"
+  }
+}
