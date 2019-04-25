@@ -1,39 +1,31 @@
+const wrapper = require('./wrap');
 const capitalize = require('./index');
-//console.log(test('xx', (a, b) => expect(true)));
 
-let ques = { desc: "Capitalize is a function", score: 2 };
 
-let tesDesc = JSON.stringify(ques);
+const testFuncPass = () => {
+    expect(typeof capitalize).toEqual('function');
+}
+wrapper('helloPass', 1, testFuncPass);
 
-test(tesDesc, () => {
-  expect(typeof capitalize).toEqual('function');
+
+const testFuncError = () => {
+    expect(typeof capitalize).toEqual('Number');
+}
+wrapper('helloError', 2, testFuncError);
+
+
+
+/* for (let i = 0; i < 1000; i++) {
+    wrapper('helloPass' + i, i, testFuncPass);
+    wrapper('helloError' + i, i, testFuncError);
+
+}
+ */
+
+/* wrapper('hello1', 3, () => {
+    expect(typeof capitalize).toEqual('Object');
 });
 
-ques = { desc: "capitalizes the first letter of every word in a sentence", score: 3 };
-tesDesc = JSON.stringify(ques);
-
-test(tesDesc, () => {
-  expect(capitalize('hi there, how is it going?')).toEqual(
-    'Hi There, How Is It Going?'
-  );
-});
-
-
-ques = { desc: "capitalizes the first letter", score: 3 };
-tesDesc = JSON.stringify(ques);
-
-test(tesDesc, () => {
-  expect(capitalize('i love breakfast at bill miller bbq')).toEqual(
-    'I Love Breakfast At Bill Miller Bbq'
-  );
-});
-
-
-/* console.log(process.env.score);
-let score = 2;
-score = 3;
-test(`capitalizes the first letter. Points: ${score}`, () => {
-  expect(capitalize('i love breakfast at bill miller bbq')).toEqual(
-    'I Love Breakfast At Bill Miller Bbq'
-  );
-}); */
+wrapper('hello3', 1, () => {
+    expect(typeof capitalize).toEqual('Number');
+}) */
