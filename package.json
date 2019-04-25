@@ -7,10 +7,9 @@
     "test": "jest"
   },
   "jest": {
-    "testResultsProcessor": "jest-json-reporter"
-  },
-  "jestJsonReporter": {
-    "outputFile": "results/test.json"
+    "reporters": [
+      "./reporter.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -21,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/baisettr/autograde-js-jest/issues"
   },
-  "homepage": "https://github.com/baisettr/autograde-js-jest#readme",
-  "devDependencies": {
-    "jest-json-reporter": "^1.2.2"
-  }
+  "homepage": "https://github.com/baisettr/autograde-js-jest#readme"
 }
