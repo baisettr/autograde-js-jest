@@ -15,12 +15,12 @@ wrapper('helloError', 2, testFuncError);
 
 
 
-/* for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 10; i++) {
     wrapper('helloPass' + i, i, testFuncPass);
     wrapper('helloError' + i, i, testFuncError);
 
 }
- */
+
 
 /* wrapper('hello1', 3, () => {
     expect(typeof capitalize).toEqual('Object');
