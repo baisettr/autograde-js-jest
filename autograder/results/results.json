@@ -1,0 +1,138 @@
+{
+    "score": 46,
+    "execution_time": 5033,
+    "tests": [
+        {
+            "score": 1,
+            "max_score": 1,
+            "desc": "helloPass",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 2,
+            "desc": "helloError",
+            "output": "failed"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "desc": "helloPass0",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "desc": "helloError0",
+            "output": "failed"
+        },
+        {
+            "score": 1,
+            "max_score": 1,
+            "desc": "helloPass1",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 1,
+            "desc": "helloError1",
+            "output": "failed"
+        },
+        {
+            "score": 2,
+            "max_score": 2,
+            "desc": "helloPass2",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 2,
+            "desc": "helloError2",
+            "output": "failed"
+        },
+        {
+            "score": 3,
+            "max_score": 3,
+            "desc": "helloPass3",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 3,
+            "desc": "helloError3",
+            "output": "failed"
+        },
+        {
+            "score": 4,
+            "max_score": 4,
+            "desc": "helloPass4",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 4,
+            "desc": "helloError4",
+            "output": "failed"
+        },
+        {
+            "score": 5,
+            "max_score": 5,
+            "desc": "helloPass5",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 5,
+            "desc": "helloError5",
+            "output": "failed"
+        },
+        {
+            "score": 6,
+            "max_score": 6,
+            "desc": "helloPass6",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 6,
+            "desc": "helloError6",
+            "output": "failed"
+        },
+        {
+            "score": 7,
+            "max_score": 7,
+            "desc": "helloPass7",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 7,
+            "desc": "helloError7",
+            "output": "failed"
+        },
+        {
+            "score": 8,
+            "max_score": 8,
+            "desc": "helloPass8",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 8,
+            "desc": "helloError8",
+            "output": "failed"
+        },
+        {
+            "score": 9,
+            "max_score": 9,
+            "desc": "helloPass9",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 9,
+            "desc": "helloError9",
+            "output": "failed"
+        }
+    ]
+}

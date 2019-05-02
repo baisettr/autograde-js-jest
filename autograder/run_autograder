@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+#cp /autograder/submission/index.js /autograder/source/index.js
+
+#cd /autograder/source
+
+npm run test
+
