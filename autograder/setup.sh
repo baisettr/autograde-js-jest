@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
+apt install nodejs npm -y
 
-apt install nodejs npm
+apt install npm -y
 
-#pip install subprocess32 gradescope-utils
+npm install jest --global 
