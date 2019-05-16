@@ -10,6 +10,7 @@ class MyCustomReporter {
         console.log('Options: ', this._options);
         console.log('Contexts', contexts); */
         //console.log('Results', results.testResults[0]["testResults"]);
+        let testExecutionError = results.testResults[0]["testExecError"] ? results.testResults[0]["testExecError"].message : "";
         const testRes = results.testResults[0]["testResults"];
         let totalScore = 0;
         const testOutput = testRes.map(r => {
@@ -29,9 +30,9 @@ class MyCustomReporter {
         //console.log(res);
         const finalOutput = {
             score: totalScore,
+            testExecutionError,
             execution_time: new Date().getTime() - results.startTime,
             tests: testOutput
-
         }
         fs.writeFile('./results/results.json', JSON.stringify(finalOutput))
     }

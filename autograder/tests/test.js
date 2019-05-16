@@ -13,13 +13,18 @@ const testFuncError = () => {
 }
 wrapper('helloError', 2, testFuncError);
 
+/* const testFuncInvalid = () => {
+    expect(typeof capitalize).toEqual('Number');
+}
+wrapper('helloInvalid@', 'gh', testFuncInvalid); */
 
 
-for (let i = 0; i < 10; i++) {
+
+/* for (let i = 0; i < 10; i++) {
     wrapper('helloPass' + i, i, testFuncPass);
     wrapper('helloError' + i, i, testFuncError);
 
-}
+} */
 
 
 /* wrapper('hello1', 3, () => {
