@@ -1,0 +1,19 @@
+{
+    "score": 2,
+    "testExecutionError": "",
+    "execution_time": 4109,
+    "tests": [
+        {
+            "score": 2,
+            "max_score": 2,
+            "desc": "return the number of users",
+            "output": "passed"
+        },
+        {
+            "score": 0,
+            "max_score": 1,
+            "desc": "return all users",
+            "output": "failed"
+        }
+    ]
+}
