@@ -1,6 +1,6 @@
 const qs = require('../source/queries');
 const qp = require('../source/validate');
-const { connection, runQuery } = require('../source/con');
+const { connection, runQuery } = require('../source/mysqlcon');
 
 //describe('in 1', () => {
 beforeAll(async () => {
