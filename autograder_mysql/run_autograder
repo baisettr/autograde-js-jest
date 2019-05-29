@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cp /autograder/submission/index.js /autograder/source/queries.js
+
+cd /autograder/source
+
+jest
+
+cp ./results/results.json  /autograder/results/results.json
+

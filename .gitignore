@@ -1,3 +1,6 @@
 node_modules/
 autograderp
 autograder_r
+mysql_sinon
+test_mysql
+autograder_mysql/ref

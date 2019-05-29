@@ -1,0 +1,22 @@
+{
+  "name": "test_mysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "reporters": [
+      "./public/reporter.js"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  }
+}
