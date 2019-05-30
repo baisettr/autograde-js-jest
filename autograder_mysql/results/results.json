@@ -1,7 +1,7 @@
 {
-    "score": 3,
+    "score": 5,
     "testExecutionError": "",
-    "execution_time": 7286,
+    "execution_time": 4442,
     "tests": [
         {
             "score": 2,
@@ -10,9 +10,21 @@
             "output": "passed"
         },
         {
+            "score": 1,
+            "max_score": 1,
+            "desc": "return inserted count",
+            "output": "passed"
+        },
+        {
+            "score": 1,
+            "max_score": 1,
+            "desc": "return update count",
+            "output": "passed"
+        },
+        {
             "score": 0,
             "max_score": 1,
-            "desc": "return inserted user",
+            "desc": "return update count",
             "output": "failed"
         },
         {
