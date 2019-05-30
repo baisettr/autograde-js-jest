@@ -12,6 +12,9 @@ module.exports = {
         query: "update user set NAME = 'test1a' where ID = 1"
     },
     query5: {
+        query: "delete from user where NAME = 'test2'"
+    },
+    query6: {
         query: 'Select count(*) from user'
     }
 }

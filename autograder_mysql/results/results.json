@@ -1,7 +1,7 @@
 {
-    "score": 5,
+    "score": 8,
     "testExecutionError": "",
-    "execution_time": 4442,
+    "execution_time": 4493,
     "tests": [
         {
             "score": 2,
@@ -10,8 +10,8 @@
             "output": "passed"
         },
         {
-            "score": 1,
-            "max_score": 1,
+            "score": 2,
+            "max_score": 2,
             "desc": "return inserted count",
             "output": "passed"
         },
@@ -30,6 +30,12 @@
         {
             "score": 1,
             "max_score": 1,
+            "desc": "return delete count",
+            "output": "passed"
+        },
+        {
+            "score": 2,
+            "max_score": 2,
             "desc": "return all users",
             "output": "passed"
         }
