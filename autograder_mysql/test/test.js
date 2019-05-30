@@ -1,13 +1,23 @@
 const qs = require('../source/queries');
 const qp = require('../source/validate');
+const fs = require('fs')
+const { promisify } = require('util')
+
+const readFileAsync = promisify(fs.readFile)
 const { connection, runQuery } = require('../source/mysqlcon');
 
 //describe('in 1', () => {
 beforeAll(async () => {
     await connection.connect();
+    const res = await readFileAsync('../source/initial.sql')
+    let initSql = res.toString().replace(/(\r\n|\n|\r)/gm, " ").replace(/\s+/g, ' ')
+    await runQuery(initSql);
+
 });
 
 afterAll(async () => {
+    let finalSetup = "DROP TABLE IF EXISTS user;"
+    //await runQuery(finalSetup);
     await connection.end();
 })
 
