@@ -1,7 +1,7 @@
 {
-    "score": 2,
+    "score": 3,
     "testExecutionError": "",
-    "execution_time": 4109,
+    "execution_time": 7286,
     "tests": [
         {
             "score": 2,
@@ -12,8 +12,14 @@
         {
             "score": 0,
             "max_score": 1,
-            "desc": "return all users",
+            "desc": "return inserted user",
             "output": "failed"
+        },
+        {
+            "score": 1,
+            "max_score": 1,
+            "desc": "return all users",
+            "output": "passed"
         }
     ]
 }
