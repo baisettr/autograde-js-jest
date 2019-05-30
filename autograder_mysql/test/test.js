@@ -3,21 +3,25 @@ const qp = require('../source/validate');
 const fs = require('fs')
 const { promisify } = require('util')
 
-const readFileAsync = promisify(fs.readFile)
+
 const { connection, runQuery } = require('../source/mysqlcon');
 
 //describe('in 1', () => {
 beforeAll(async () => {
-    await connection.connect();
-    const res = await readFileAsync('../source/initial.sql')
-    let initSql = res.toString().replace(/(\r\n|\n|\r)/gm, " ").replace(/\s+/g, ' ')
-    await runQuery(initSql);
-
+    try {
+        await connection.connect();
+        const readFileAsync = promisify(fs.readFile);
+        const res = await readFileAsync('./source/initial.sql')
+        let initSql = await res.toString().replace(/(\r\n|\n|\r)/gm, " ").replace(/\s+/g, ' ')
+        await runQuery(initSql);
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 afterAll(async () => {
     let finalSetup = "DROP TABLE IF EXISTS user;"
-    //await runQuery(finalSetup);
+    await runQuery(finalSetup);
     await connection.end();
 })
 
@@ -31,8 +35,8 @@ qsKeys.map((q) => {
     let tesDesc = JSON.stringify(ques);
 
     return test(tesDesc, async () => {
-        let result = await runQuery(query)
-        await expect(runQuery(studentQuery)).resolves.toEqual(result)
+        let result = await runQuery(studentQuery);
+        return result.length ? expect(runQuery(query)).resolves.toEqual(result) : expect(runQuery(query, true)).resolves.toEqual(result)
     })
 })
 
