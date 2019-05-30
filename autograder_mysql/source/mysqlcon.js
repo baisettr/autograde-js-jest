@@ -19,7 +19,7 @@ function runQuery(query, state = false) {
             } else {
                 //console.log(row);
                 res = row.length ? state ? row[0]['count(*)'] : row : row.affectedRows
-                console.log(res);
+                //console.log(res);
                 resolve(res);
             }
         })

@@ -2,17 +2,15 @@ const qs = require('../source/queries');
 const qp = require('../source/validate');
 const fs = require('fs')
 const { promisify } = require('util')
-
-
+const readFileAsync = promisify(fs.readFile);
 const { connection, runQuery } = require('../source/mysqlcon');
 
-//describe('in 1', () => {
+
 beforeAll(async () => {
     try {
         await connection.connect();
-        const readFileAsync = promisify(fs.readFile);
-        const res = await readFileAsync('./source/initial.sql')
-        let initSql = await res.toString().replace(/(\r\n|\n|\r)/gm, " ").replace(/\s+/g, ' ')
+        const res = await readFileAsync('./source/initial.sql');
+        let initSql = await res.toString().replace(/(\r\n|\n|\r)/gm, " ").replace(/\s+/g, ' ');
         await runQuery(initSql);
     } catch (err) {
         console.log(err);
@@ -20,32 +18,43 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-    let finalSetup = "DROP TABLE IF EXISTS user;"
-    await runQuery(finalSetup);
-    await connection.end();
-})
+    try {
+        const res = await readFileAsync('./source/final.sql');
+        let finalSql = await res.toString().replace(/(\r\n|\n|\r)/gm, " ").replace(/\s+/g, ' ');
+        await runQuery(finalSql);
+        await connection.end();
+    } catch (err) {
+        console.log(err);
+    }
+});
 
 const qsKeys = Object.keys(qp);
 
 qsKeys.map((q) => {
     const studentQuery = qs[q]['query'];
 
-    const { query, score, desc } = qp[q];
+    const { query, score, desc, record } = qp[q];
     let ques = { desc, score };
     let tesDesc = JSON.stringify(ques);
 
     return test(tesDesc, async () => {
         let result = await runQuery(studentQuery);
-        return result.length ? expect(runQuery(query)).resolves.toEqual(result) : expect(runQuery(query, true)).resolves.toEqual(result)
+        switch (record) {
+            case 'SELECT':
+                return expect(runQuery(query)).resolves.toEqual(result)
+                break
+            case 'INSERT':
+                return expect(runQuery(query, true)).resolves.toEqual(result)
+                break
+            case 'UPDATE':
+                return expect(runQuery(query, true)).resolves.toEqual(result)
+                break
+            case 'DELETE':
+                return expect(runQuery(query, true)).resolves.toEqual(0)
+                break
+            default:
+                break
+        }
     })
-})
-
-
-/* it('tests error with async/await and rejects', async () => {
-    expect.assertions(1);
-    await expect(qy.runQuery(qs.query1)).rejects.toEqual('Error');
-    //expect(1).toEqual(2);
-}); */
-
-//})
+});
 
