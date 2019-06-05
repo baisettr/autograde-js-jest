@@ -1,4 +1,4 @@
-const qs = require('../source/queries');
+const qs = require('../source/inputQueries.json');
 const qp = require('../source/validate');
 const fs = require('fs')
 const { promisify } = require('util')
@@ -31,9 +31,12 @@ afterAll(async () => {
 const qsKeys = Object.keys(qp);
 
 qsKeys.map((q) => {
-    const studentQuery = qs[q]['query'];
+    const key = q + '.sql';
+    //console.log(key);
+    const studentQuery = qs[key];
+    //console.log(studentQuery);
 
-    const { query, score, desc, record } = qp[q];
+    const { query, score, desc, record, value } = qp[q];
     let ques = { desc, score };
     let tesDesc = JSON.stringify(ques);
 
@@ -44,13 +47,13 @@ qsKeys.map((q) => {
                 return expect(runQuery(query)).resolves.toEqual(result)
                 break
             case 'INSERT':
-                return expect(runQuery(query, true)).resolves.toEqual(result)
+                return expect(runQuery(query, true)).resolves.toEqual(value)
                 break
             case 'UPDATE':
-                return expect(runQuery(query, true)).resolves.toEqual(result)
+                return expect(runQuery(query, true)).resolves.toEqual(value)
                 break
             case 'DELETE':
-                return expect(runQuery(query, true)).resolves.toEqual(0)
+                return expect(runQuery(query, true)).resolves.toEqual(value)
                 break
             default:
                 break
