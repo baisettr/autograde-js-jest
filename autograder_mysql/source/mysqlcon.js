@@ -2,9 +2,9 @@ const mysql = require('mysql');
 
 const options = {
     host: 'localhost',
-    user: "test",
-    password: "test",
-    database: 'test',
+    user: "gradeAdmin",
+    password: "gradePassword",
+    database: 'grade',
     multipleStatements: true
 }
 

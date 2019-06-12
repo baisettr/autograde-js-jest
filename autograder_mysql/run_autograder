@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
-cp /autograder/submission/index.js /autograder/source/queries.js
+cp /autograder/submission/sqlfiles.zip /autograder/source/sqlfiles.zip
 
 cd /autograder/source
+
+unzip sqlfiles.zip
+
+node processSqlJS.js
+
+cd ../autograder
 
 jest
 
