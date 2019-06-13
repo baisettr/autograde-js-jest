@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+cp /autograder/submission/*.sql /autograder/source/source/sqlfiles/.
+
+cd /autograder/source
+
+npm install
+
+node source/processSqlJS.js
+
+jest
+
+cp ./results/results.json  /autograder/results/results.json
+
